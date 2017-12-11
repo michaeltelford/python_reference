@@ -12,7 +12,7 @@ help:
 	@echo ""
 
 test:
-	@find ./test -name "*.py" -exec python {} \;
+	find ./test -name "*.py" -exec python {} \;
 
 run:
-	@python src/main.py
+	python src/main.py
