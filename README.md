@@ -6,6 +6,13 @@ This reference project is a personal one, whilst I've tried to ensure that the p
 
 Please view both the details below and the actual source code itself as needed. Enjoy!
 
+## Prerequisites
+
+This reference assumes a working installation of:
+
+- `python3`
+- `pip3`
+
 ## Technical
 
 ### Code Standards
@@ -20,13 +27,13 @@ Search for third party software packages at:
 
 Then install them with pip:
 
-`pip install ipython`
+`pip3 install ipython`
 
 Or install them at the project level:
 
 ```bash
 echo "ipython" >> requirements.lock
-pip install -r requirements.lock # installs deps from PyPi.
+pip3 install -r requirements.lock # installs deps from PyPi.
 ```
 
 ### virtualenv
@@ -35,13 +42,13 @@ pip install -r requirements.lock # installs deps from PyPi.
 
 Run once per host OS to install virtualenv:
 
-`pip install virtualenv`
+`pip3 install virtualenv`
 
 Then run once per project:
 
 ```bash
 cd <project_dir>
-virtualenv env # installs python3, pip3 etc.
+virtualenv -p python3 env # installs python3, pip3 etc.
 source env/bin/activate # optional but recommended for below commands.
 pip install -r requirements.lock # installs deps from PyPi.
 python some_file.py # etc...
