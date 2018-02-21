@@ -13,6 +13,8 @@ This reference assumes a working installation of:
 - `python3`
 - `pip3`
 
+And a basic knowledge of `*nix` shell commands.
+
 ## Technical
 
 ### Code Standards
@@ -51,7 +53,7 @@ cd <project_dir>
 virtualenv -p python3 env # installs python3, pip3 etc.
 source env/bin/activate # optional but recommended for below commands.
 pip install -r requirements.lock # installs deps from PyPi.
-python some_file.py # etc...
+python some_file.py # etc... runs using python3 exe
 ```
 
 ### Example Class
@@ -92,7 +94,7 @@ dog.set_age(4)
 
 ### Importing
 
-The below method of updating the path is **NOT** the recommended best approach in the later versions of Python however it does work so I've included it here (tut tut!).
+The below method of updating the path is **NOT** the recommended best approach in the later versions of Python however it does work so I've included it here (tut tut!):
 
 ```python
 import sys
@@ -103,6 +105,18 @@ from main import * # or ‘import main’ looks for main.py
 # Use main.py module contents here...
 ```
 
+#### Django
+
+Imports in Django are easier due to the framework's additional functionality:
+
+```python
+# 'app' is the name of the app, imports work across multiple apps
+from app import Something
+
+
+Something.do_something()
+```
+
 ### unittest
 
 Use `unittest` for unit testing your code:
@@ -111,6 +125,7 @@ Use `unittest` for unit testing your code:
 
 ```python
 import unittest
+
 from something import *
 
 
@@ -137,9 +152,11 @@ For BDD (Gherkin and Python) use `behave`. See [here](https://pythonhosted.org/b
 
 The directory structure for `behave` should roughly be as follows:
 
-- features/*.features: Gherkin files.
-- features/environment.py: trigger events e.g. pre test etc.
-- features/steps/*.py: The code behind the Gherkin steps.
+| File(s) 					| Usage		 									 |
+| ------------------------- | ---------------------------------------------- |
+| `features/*.features`		| Gherkin files. 							 	 |
+| `features/environment.py`	| Trigger events e.g. pre test etc. 			 |
+| `features/steps/*.py`		| The code behind the Gherkin steps. 			 |
 
 To run the tests:
 
@@ -163,6 +180,17 @@ if __name__ == "__main__":
   do_something(name)
 ```
 
+#### Django
+
+If debugging in Django you may need to use the `logging` lib to print to `STDOUT`. Below is an example:
+
+```python
+import logging
+
+logging.debug("PRINTING VAR NOW:") # Optional but useful
+logging.debug(var) # There are different levels of logging e.g. error() etc.
+```
+
 ## Thanks
 
-Thanks for looking, if you have any suggestions on improving the reference or new additions then feel free to raise an issue.  Also, if you'd like to have your own reference project then feel free to use this as a starter and fork it.
+Thanks for looking, if you have any suggestions on improving the reference or new additions then feel free to raise an issue. Also, if you'd like to have your own reference project then feel free to use this as a starter and fork it.
