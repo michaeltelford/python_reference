@@ -17,6 +17,11 @@ And a basic knowledge of `*nix` shell commands.
 
 ## Technical
 
+### Documentation
+
+See python3 standard lib docs at:
+[https://docs.python.org/3](https://docs.python.org/3/)
+
 ### Code Standards
 
 See the accepted standards at:
@@ -38,7 +43,9 @@ echo "ipython" >> requirements.lock
 pip3 install -r requirements.lock # installs deps from PyPi.
 ```
 
-### virtualenv
+### Environment
+
+#### virtualenv
 
 `virtualenv` means you can use a separate python3 executable rather than use the system installation of python (which is not the best idea in case you accidentally break it).
 
@@ -56,7 +63,9 @@ pip install -r requirements.lock # installs deps from PyPi.
 python some_file.py # etc... runs using python3 exe
 ```
 
-### Example Class
+### Code
+
+#### Example Class
 
 > dog.py
 
@@ -92,7 +101,7 @@ dog.set_age(4)
 # call any inherited methods from the Animal class...
 ```
 
-### Importing
+#### Importing
 
 The below method of updating the path is **NOT** the recommended best approach in the later versions of Python however it does work so I've included it here (tut tut!):
 
@@ -105,7 +114,7 @@ from main import * # or ‘import main’ looks for main.py
 # Use main.py module contents here...
 ```
 
-#### Django
+##### Django
 
 Imports in Django are easier due to the framework's additional functionality:
 
@@ -117,7 +126,9 @@ from app import Something
 Something.do_something()
 ```
 
-### unittest
+### Testing
+
+#### unittest
 
 Use `unittest` for unit testing your code:
 
@@ -146,7 +157,7 @@ Execute the tests with:
 
 `python lib_tests.py`
 
-### behave
+#### behave
 
 For BDD (Gherkin and Python) use `behave`. See [here](https://pythonhosted.org/behave/tutorial.html) for more details.
 
